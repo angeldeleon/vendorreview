@@ -1,0 +1,38 @@
+# Brightwave Inc. — completed security questionnaire.
+#
+# Attach with `vendorreview check -i vendor.example.yml --responses <this file>`.
+# Answer yes, no, or partial. "partial" is recorded as not evidenced, which is
+# what it deserves, and the comment is quoted back in the review.
+#
+# Run `vendorreview questions` for the blank template and the descriptions.
+
+sso_saml_oidc: yes
+scim_deprovisioning: no
+mfa_enforced:
+  answer: partial
+  comment: Enforced for customer administrators. Not yet enforced for our own support staff.
+admin_role_separation: yes
+encryption_in_transit: yes
+encryption_at_rest: yes
+key_management:
+  answer: partial
+  comment: Keys held in the same cloud account as the data. Customer-managed keys on the roadmap for Q4.
+data_residency_controlled: yes
+retention_policy: yes
+deletion_on_termination: yes
+subprocessor_list_published: yes
+subprocessor_change_notice: no
+vulnerability_management: yes
+patch_sla: yes
+penetration_test_annual: yes
+secure_development_lifecycle: yes
+dependency_scanning: yes
+audit_log_export: no
+incident_notification: yes
+incident_response_plan: yes
+business_continuity_plan: yes
+backup_tested: yes
+background_checks: yes
+security_training: yes
+right_to_audit: no
+vulnerability_disclosure: yes

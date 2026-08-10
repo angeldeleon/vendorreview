@@ -1,0 +1,41 @@
+BRIGHTWAVE INC.
+
+SOC 2 Type II Report
+Report on Controls Relevant to Security and Confidentiality
+
+Independent Service Auditor's Report
+
+Scope
+
+We have examined Brightwave Inc.'s description of its Webinar Platform system
+for the period from 2024-01-01 to 2024-12-31, and the suitability of the design
+and operating effectiveness of controls stated in the description throughout
+the period from 2024-01-01 to 2024-12-31 to meet the applicable trust services
+criteria for Security and Confidentiality.
+
+The trust services criteria in scope of this examination are Security and
+Confidentiality. Availability, Processing Integrity and Privacy were not
+included in the scope of this report.
+
+Brightwave Inc. uses a subservice organisation for cloud infrastructure
+hosting. The description includes only the controls of Brightwave Inc. and
+excludes the controls of the subservice organisation. Our examination did not
+extend to controls of the subservice organisation. This is the carve-out
+method.
+
+Opinion
+
+In our opinion, in all material respects, the controls stated in the
+description were suitably designed and operated effectively throughout the
+period. This is an unqualified opinion.
+
+Results of Tests of Controls
+
+CC6.1 Logical access — no exceptions noted.
+CC6.2 User registration — no exceptions noted.
+CC6.3 Role-based access — exceptions were noted. For 2 of 25 terminations
+      sampled, access removal exceeded the documented five business day target.
+      Management response: the terminations were contractors offboarded through
+      a manual process which has since been automated.
+CC7.2 System monitoring — no exceptions noted.
+CC8.1 Change management — no exceptions noted.

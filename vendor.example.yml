@@ -1,0 +1,60 @@
+# vendorreview intake — third-party security review
+#
+# This is about how WE will use the vendor, not about the vendor's own controls.
+# They answer that separately: `vendorreview questions` prints the response
+# template to send them, and you attach the completed file with --responses.
+#
+# Leave anything you do not know blank rather than guessing. A blank becomes a
+# question we put to the vendor; a wrong answer becomes a conclusion we get wrong.
+#
+# Run it:
+#   vendorreview check -i vendor.example.yml
+#   vendorreview check -i vendor.example.yml --soc2 soc2.txt --responses answers.yml
+
+vendor: Brightwave Inc
+service: >-
+  Runs our customer webinars and holds the attendee list, including registration
+  answers. Replaces the spreadsheet Marketing keeps now.
+requesting_team: Marketing
+owner: Priya Raman
+stage: negotiating              # evaluating | negotiating | renewing | in_use
+
+hosting: saas                   # saas | self_hosted | hybrid
+
+data_classes: [personal data]   # e.g. personal data, confidential, credentials, internal, public
+data_subjects: [customers, employees]
+record_volume: About 40,000 contacts today, growing with each campaign.
+data_residency: Stated as EU on the sales call. Not yet confirmed in writing.
+cross_border: yes               # yes | no — support, backup or analytics outside the region
+subprocessors:                  # left blank: nobody has asked for the list yet
+retention: Contacts retained for the life of the contract; no stated deletion schedule.
+deletion_on_termination:        # yes | no — not yet in the draft contract
+
+integrations:
+  - pattern: sso                # sso | scim | api_key | oauth | webhook | agent | none
+    name: Okta
+    direction: inbound
+  - pattern: oauth
+    name: Salesforce contact sync
+    direction: bidirectional
+    scopes: api, refresh_token, offline_access
+oauth_scopes: api, refresh_token, offline_access
+exposure: internet              # internet | restricted | private
+
+sso_available: yes
+scim_available: no
+mfa_enforced:                   # not yet answered by the vendor
+admin_roles: Two Marketing operations staff, plus Brightwave support during onboarding.
+audit_log_export:               # not yet answered by the vendor
+
+criticality: important          # critical | important | routine
+outage_impact: >-
+  Webinars scheduled that week do not run. Recoverable, embarrassing, and it
+  lands during campaign season.
+
+contract_status: Draft with legal, target signature end of quarter.
+dpa_status: no                  # not yet executed
+breach_notification:            # nothing in the draft contract yet
+right_to_audit:                 # not yet negotiated
+regulated_regimes: [GDPR]
+evidence_supplied: [SOC 2 Type II, pen test summary]

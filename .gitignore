@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# The review history and anything a run writes. The history names every vendor
+# the organisation assessed and every gap each one had -- a shortlist of which
+# of your suppliers to attack, and through what. It does not belong in version
+# control.
+.vendorreview/
+vendorreview.db
+review.md
+review.html
+review.json
+
+# Vendor evidence. A SOC 2 report is usually under NDA and a pen test summary
+# always is. Extract them to text next to the intake if that is convenient, but
+# do not commit them.
+*.soc2.txt
+*.pentest.txt
+evidence/
